@@ -1,8 +1,8 @@
-#include <cstdio>
+#include <iostream>
 #include <algorithm>
 using namespace std;
 
-const int N = 1e5 + 10;
+const int N = 100010;
 int a[N], n;
 
 void qsort(int l, int r) {
@@ -21,11 +21,11 @@ void qsort(int l, int r) {
 
 
 int main() {
-    scanf("%d", &n);
-    for (int i = 0; i < n; ++i) scanf("%d", &a[i]);
+    cin.tie(nullptr)->sync_with_stdio(false);
+    for (int i = 0; i < n; ++i) cin >> a[i];
 
     qsort(0, n - 1);
 
-    for (int i = 0; i < n; ++i) printf("%d ", a[i]);
+    for (int i = 0; i < n; ++i) cout << a[i] << " \n"[i == n - 1];
     return 0;
 }
