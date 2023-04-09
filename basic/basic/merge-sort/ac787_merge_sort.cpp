@@ -1,4 +1,5 @@
-#include <cstdio>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 const int N = 100010;
@@ -11,10 +12,9 @@ void merge_sort(int l, int r) {
     merge_sort(l, mid), merge_sort(mid + 1, r);
     
     int i = l, j = mid + 1, k = 0;
-    while (i <= mid && j <= r) {
-        if (a[i] <= a[j]) t[k++] = a[i++];
-        else t[k++] = a[j++];
-    }
+    while (i <= mid && j <= r) 
+        t[k++] = a[i] <= a[j] ? a[i++] : a[j++];
+        
     while (i <= mid) t[k++] = a[i++];
     while (j <= r) t[k++] = a[j++];
     
@@ -23,11 +23,12 @@ void merge_sort(int l, int r) {
 }
 
 int main() {
-    scanf("%d", &n);
-    for (int i = 0; i < n; ++i) scanf("%d", &a[i]);
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cin >> n;
+    for (int i = 0; i < n; ++i) cin >> a[i];
     
     merge_sort(0, n - 1);
     
-    for (int i = 0; i < n; ++i) printf("%d ", a[i]);
+    for (int i = 0; i < n; ++i) cout << a[i] << ' ';
     return 0;
 }

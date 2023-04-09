@@ -19,6 +19,7 @@ void div() {
 }
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     string sa;
     cin >> sa >> b;
     n = sa.size();
@@ -28,8 +29,8 @@ int main() {
     
     div();
     
-    for (int i = c.size() - 1; i >= 0; --i) printf("%d", c[i]);
-    printf("\n%d", r);
+    for (int i = c.size() - 1; i >= 0; --i) cout << c[i];
+    cout << '\n' << r;
     
     return 0;
 }

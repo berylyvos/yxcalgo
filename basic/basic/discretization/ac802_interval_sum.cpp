@@ -1,15 +1,13 @@
-#include <cstdio>
+#include <iostream>
 #include <vector>
 #include <algorithm>
-// https://www.acwing.com/problem/content/description/804/
-
 using namespace std;
-using PII = pair<int, int>;
+// https://www.acwing.com/problem/content/804/
 
 const int N = 300010;
 int s[N], n, m;
 vector<int> a;
-vector<PII> add, query;
+vector<pair<int, int>> add, query;
 
 // map x to [1..a.size()]
 int mapping(int x) {
@@ -23,19 +21,20 @@ int mapping(int x) {
 }
 
 int main() {
-    scanf("%d%d", &n, &m);
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cin >> n >> m;
     add.reserve(n);
     query.reserve(m);
     a.reserve(n + 2 * m);
     
     int x, c, l, r;
     for (int i = 0; i < n; ++i) {
-        scanf("%d%d", &x, &c);
+        cin >> x >> c;
         add.emplace_back(x, c);
         a.emplace_back(x);
     }
     for (int i = 0; i < m; ++i) {
-        scanf("%d%d", &l, &r);
+        cin >> l >> r;
         query.emplace_back(l, r);
         a.emplace_back(l), a.emplace_back(r);
     }
@@ -52,7 +51,7 @@ int main() {
     
     // output interval sum: s[r] - s[l - 1]
     for (const auto &it: query)
-        printf("%d\n", s[mapping(it.second)] - s[mapping(it.first) - 1]);
+        cout << s[mapping(it.second)] - s[mapping(it.first) - 1] << '\n';
     
     return 0;
 }

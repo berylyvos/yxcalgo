@@ -15,6 +15,7 @@ int top() { return q[hh]; }
 bool empty() { return hh > tt; }
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     int n, x;
     cin >> n;
     string op;

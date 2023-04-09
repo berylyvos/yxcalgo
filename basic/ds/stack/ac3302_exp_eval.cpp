@@ -2,7 +2,7 @@
 #include <cstring>
 #include <stack>
 #include <unordered_map>
-// https://www.acwing.com/problem/content/description/3305/
+// https://www.acwing.com/problem/content/3305/
 
 using namespace std;
 
@@ -22,6 +22,7 @@ void eval() {
 }
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     string exp;
     cin >> exp;
     

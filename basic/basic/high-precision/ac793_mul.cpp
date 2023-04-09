@@ -21,6 +21,7 @@ void mul() {
 }
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     string sa;
     cin >> sa >> b;
     n = sa.size();
@@ -30,7 +31,7 @@ int main() {
     
     mul();
     
-    for (int i = c.size() - 1; i >= 0; --i) printf("%d", c[i]);
+    for (int i = c.size() - 1; i >= 0; --i) cout << c[i];
     
     return 0;
 }

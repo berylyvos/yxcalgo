@@ -1,14 +1,15 @@
-#include <cstdio>
+#include <iostream>
 using namespace std;
-// https://www.acwing.com/problem/content/submission/802/
+// https://www.acwing.com/problem/content/802/
 
 const int N = 100010;
 int a[N], b[N], n, m, x;
 
 int main() {
-    scanf("%d%d%d", &n, &m, &x);
-    for (int i = 0; i < n; ++i) scanf("%d", &a[i]);
-    for (int i = 0; i < m; ++i) scanf("%d", &b[i]);
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cin >> n >> m >> x;
+    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < m; ++i) cin >> b[i];
     
     for (int i = 0, j = m - 1;;) {
         int s = a[i] + b[j];
@@ -17,7 +18,7 @@ int main() {
         } else if (s < x) {
             ++i;
         } else {
-            printf("%d %d", i, j);
+            cout << i << ' ' << j;
             break;
         }
     }

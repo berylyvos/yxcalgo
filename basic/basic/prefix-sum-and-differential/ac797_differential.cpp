@@ -1,6 +1,6 @@
-#include <cstdio>
+#include <iostream>
 using namespace std;
-// https://www.acwing.com/problem/content/description/799/
+// https://www.acwing.com/problem/content/799/
 
 const int N = 100010;
 int b[N], n, m, l, r, c;
@@ -11,20 +11,21 @@ void insert(int l, int r) {
 }
 
 int main() {
-    scanf("%d%d", &n, &m);
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cin >> n >> m;
     for (int i = 1; i <= n; ++i) {
-        scanf("%d", &c);
+        cin >> c;
         insert(i, i);
     }
     
     while (m--) {
-        scanf("%d%d%d", &l, &r, &c);
+        cin >> l >> r >> c;
         insert(l, r);
     }
     
     for (int i = 1; i <= n; ++i) {
         b[i] += b[i - 1];
-        printf("%d ", b[i]);
+        cout << b[i] << ' ';
     }
     
     return 0;

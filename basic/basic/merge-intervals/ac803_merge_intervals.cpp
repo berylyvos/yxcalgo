@@ -1,18 +1,17 @@
-#include <cstdio>
+#include <iostream>
 #include <vector>
 #include <algorithm>
-// https://www.acwing.com/problem/content/description/805/
-
 using namespace std;
-using vpii = vector<pair<int, int>>;
+// https://www.acwing.com/problem/content/805/
 
-vpii interval, merged;
+vector<pair<int, int>> interval, merged;
 int n, a, b;
 
 int main() {
-    scanf("%d", &n);
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cin >> n;
     while (n--) {
-        scanf("%d%d", &a, &b);
+        cin >> a >> b;
         interval.emplace_back(a, b);
     }
     
@@ -30,7 +29,7 @@ int main() {
         }
     }
     
-    printf("%d", merged.size() - 1);
+    cout << merged.size() - 1;
     
     return 0;
 }

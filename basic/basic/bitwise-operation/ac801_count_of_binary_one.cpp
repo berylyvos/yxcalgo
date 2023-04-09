@@ -1,19 +1,22 @@
-#include <cstdio>
+#include <iostream>
 using namespace std;
 // https://www.acwing.com/problem/content/803/
 
+int n, x;
+
 int main() {
-    int n, x;
-    scanf("%d", &n);
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cin >> n;
     for (int i = 0; i < n; ++i) {
-        scanf("%d", &x);
+        cin >> x;
         int cnt = 0;
         while (x) {
             // x -= (x & (-x));
             x &= (x - 1);
             ++cnt;
         }
-        printf("%d ", cnt);
+        cout << cnt << ' ';
     }
+    
     return 0;
 }

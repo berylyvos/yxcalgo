@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-// https://www.acwing.com/problem/content/description/145/
+// https://www.acwing.com/problem/content/145/
 
 const int N = 100010;
 int son[N * 31][2], idx;

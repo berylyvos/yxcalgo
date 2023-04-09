@@ -5,6 +5,7 @@ using namespace std;
 // https://www.acwing.com/problem/content/793/
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     string a, b;
     cin >> a >> b;
     int n = a.size(), m = b.size();

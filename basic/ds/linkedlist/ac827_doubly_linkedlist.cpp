@@ -20,6 +20,7 @@ void remove(int k) {
 }
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     init();
     int n, x, k;
     cin >> n;
@@ -44,7 +45,7 @@ int main() {
         }
     }
     
-    for (int i = r[0]; i != 1; i = r[i]) printf("%d ", e[i]);
+    for (int i = r[0]; i != 1; i = r[i]) cout << e[i] << ' ';
     
     return 0;
 }

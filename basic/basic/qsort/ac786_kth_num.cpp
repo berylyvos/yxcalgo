@@ -1,6 +1,7 @@
-#include <cstdio>
+#include <iostream>
 #include <algorithm>
 using namespace std;
+// https://www.acwing.com/problem/content/description/788/
 
 const int N = 1e5 + 10;
 int a[N], n, k;
@@ -20,9 +21,10 @@ int qselect(int l, int r) {
 }
 
 int main() {
-    scanf("%d%d", &n, &k);
-    -- k;
-    for (int i = 0; i < n; ++ i) scanf("%d", &a[i]);
-    printf("%d", qselect(0, n - 1));
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cin >> n >> k;
+    --k;
+    for (int i = 0; i < n; ++ i) cin >> a[i];
+    cout << qselect(0, n - 1);
     return 0;
 }

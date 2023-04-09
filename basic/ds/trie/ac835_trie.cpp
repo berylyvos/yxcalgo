@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-// https://www.acwing.com/problem/content/description/837/
+// https://www.acwing.com/problem/content/837/
 
 const int N = 100010;
 int son[N][26], cnt[N];

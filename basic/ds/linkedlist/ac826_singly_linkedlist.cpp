@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-// https://www.acwing.com/problem/content/submission/828/
+// https://www.acwing.com/problem/content/828/
 
 const int N = 100010;
 
@@ -25,6 +25,7 @@ void remove(int k) {
 }
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     init();
     int n;
     cin >> n;
@@ -44,6 +45,6 @@ int main() {
         }
     }
     
-    for (int i = head; ~i; i = ne[i]) printf("%d ", e[i]);
+    for (int i = head; ~i; i = ne[i]) cout << e[i] << ' ';
     return 0;
 }

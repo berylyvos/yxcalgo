@@ -1,15 +1,16 @@
-#include <cstdio>
+#include <iostream>
 using namespace std;
+// https://www.acwing.com/problem/content/description/790/
 
-using LL = long long;
+using ll = long long;
 const int N = 100010;
 int a[N], t[N], n;
 
-LL merge_and_count(int l, int r) {
+ll merge_and_count(int l, int r) {
     if (l >= r) return 0;
     
     int mid = (l + r) >> 1;
-    LL cnt = merge_and_count(l, mid) + merge_and_count(mid + 1, r);
+    ll cnt = merge_and_count(l, mid) + merge_and_count(mid + 1, r);
     
     int i = l, j = mid + 1, k = 0;
     while (i <= mid && j <= r) {
@@ -29,10 +30,11 @@ LL merge_and_count(int l, int r) {
 }
 
 int main() {
-    scanf("%d", &n);
-    for (int i = 0; i < n; ++i) scanf("%d", &a[i]);
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cin >> n;
+    for (int i = 0; i < n; ++i) cin >> a[i];
     
-    printf("%lld\n", merge_and_count(0, n - 1));
+    cout << merge_and_count(0, n - 1);
     
     return 0;
 }

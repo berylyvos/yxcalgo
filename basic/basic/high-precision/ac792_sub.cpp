@@ -27,6 +27,7 @@ void sub(vector<int>& a, vector<int>& b) {
 }
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     string sa, sb;
     cin >> sa >> sb;
     n = sa.size(), m = sb.size();

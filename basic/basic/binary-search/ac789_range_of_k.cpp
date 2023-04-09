@@ -1,16 +1,17 @@
-#include <cstdio>
+#include <iostream>
 using namespace std;
-// https://www.acwing.com/problem/content/791/
+// https://www.acwing.com/problem/content/description/791/
 
 const int N = 100010;
 int a[N];
 int n, q, k;
 
 int main() {
-    scanf("%d%d", &n, &q);
-    for (int i = 0; i < n; ++i) scanf("%d", &a[i]);
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cin >> n >> q;
+    for (int i = 0; i < n; ++i) cin >> a[i];
     while (q--) {
-        scanf("%d", &k);
+        cin >> k;
         
         int l = 0, r = n - 1;
         while (l < r) {
@@ -19,7 +20,7 @@ int main() {
             else l = mid + 1;
         }
         int left = r;
-        if (a[r] != k) printf("-1 -1\n");
+        if (a[r] != k) cout << "-1 -1\n";
         else {
             r = n - 1;
             while (l < r) {
@@ -27,7 +28,7 @@ int main() {
                 if (a[mid] <= k) l = mid;
                 else r = mid - 1;
             }
-            printf("%d %d\n", left, r);
+            cout << left << ' ' << r << '\n';
         }
         
     }

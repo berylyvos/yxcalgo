@@ -23,6 +23,7 @@ bool empty() {
 }
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     int m;
     cin >> m;
     while (m--) {
