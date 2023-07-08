@@ -12,18 +12,18 @@ const int dx[4] = {0, 1, 0, -1}, dy[4] = {-1, 0, 1, 0};
 int bfs() {
     memset(d, -1, sizeof d);
     queue<pair<int, int>> q;
-    q.push(make_pair(0, 0));
+    q.emplace(0, 0);
     d[0][0] = 0;
     
     while (!q.empty()) {
-        auto t = q.front();
+        auto [x, y] = q.front();
         q.pop();
-        int x = t.first, y = t.second;
+        
         for (int i = 0; i < 4; ++i) {
             int a = x + dx[i], b = y + dy[i];
             if (a < n && a >= 0 && b >= 0 && b < m && !g[a][b] && d[a][b] == -1) {
                 d[a][b] = d[x][y] + 1;
-                q.push(make_pair(a, b));
+                q.emplace(a, b);
             }
         }
     }
