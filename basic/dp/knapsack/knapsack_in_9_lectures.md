@@ -174,9 +174,7 @@ for (int i = 0; i < n; ++ i)
 `f[i][j]` 表示从前 `i` 件物品中选，且体积**恰好**为 `j` 的最大价值。
 
 `g[i][j]` 表示 `f[i][j]` 取最大值的方案数。
-$$
-g[i][j] = \begin{cases}g[i-1][j],&f[i-1][j] > f[i-1][j-v[i]] + w[i]\\g[i-1][j-v[i]],&f[i-1][j]<f[i-1][j-v[i]] + w[i]\\g[i-1][j]+g[i-1][j-v[i]],&f[i-1][j]=f[i-1][j-v[i]]+w[i]\end{cases}
-$$
+$$g[i][j] = \begin{cases}g[i-1][j],&f[i-1][j] > f[i-1][j-v[i]] + w[i]\\g[i-1][j-v[i]],&f[i-1][j]<f[i-1][j-v[i]] + w[i]\\g[i-1][j]+g[i-1][j-v[i]],&f[i-1][j]=f[i-1][j-v[i]]+w[i]\end{cases}$$
 
 
 ```C++
