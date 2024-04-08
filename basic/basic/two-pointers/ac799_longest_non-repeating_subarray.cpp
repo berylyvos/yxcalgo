@@ -14,9 +14,9 @@ int main() {
     int res = 0;
     unordered_map<int, int> cnt;
     for (int i = 0, j = 0; j < n; ++j) {
-        ++cnt[a[j]];
-        while (cnt[a[j]] > 1) --cnt[a[i++]];
+        while (cnt[a[j]] > 0) --cnt[a[i++]];
         res = max(res, j - i + 1);
+        ++cnt[a[j]];
     }
     
     cout << res;

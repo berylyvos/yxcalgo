@@ -4,7 +4,7 @@
 using namespace std;
 // https://www.acwing.com/problem/content/805/
 
-vector<pair<int, int>> interval, merged;
+vector<pair<int, int>> interval;
 int n, a, b;
 
 int main() {
@@ -18,18 +18,16 @@ int main() {
     // sort by left endpoints
     sort(interval.begin(), interval.end());
     
-    merged.emplace_back(0, -0x3fffffff);
-    
-    for (auto &cur: interval) {
-        auto &right = merged.back().second;
-        if (cur.first > right) {
-            merged.emplace_back(cur);
-        } else {
-            right = max(right, cur.second);
+    int res = 0, tail = -1e9 - 1;
+    for (auto& [l, r]: interval) {
+        if (l <= tail) tail = max(tail, r);
+        else {
+            ++res;
+            tail = r;
         }
     }
-    
-    cout << merged.size() - 1;
+
+    cout << res;
     
     return 0;
 }

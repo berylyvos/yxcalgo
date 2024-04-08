@@ -11,13 +11,9 @@ int main() {
     for (int i = 0; i < n; ++i) cin >> a[i];
     for (int i = 0; i < m; ++i) cin >> b[i];
     
-    for (int i = 0, j = m - 1;;) {
-        int s = a[i] + b[j];
-        if (s > x) {
-            --j;
-        } else if (s < x) {
-            ++i;
-        } else {
+    for (int i = 0, j = m - 1; i < n; ++i) {
+        while (j >= 0 && a[i] + b[j] > x) --j;
+        if (a[i] + b[j] == x) {
             cout << i << ' ' << j;
             break;
         }
